@@ -1,1 +1,2362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Curls - 30-Day Hydrolyzed Collagen Treatment for Curly Hair</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CSS RESET & BASE STYLES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --primary: #C9B8E8;
+            --primary-dark: #A896C8;
+            --primary-light: #E4D9F5;
+            --secondary: #E8C4C4;
+            --secondary-light: #F5DCDC;
+            --accent: #6B4E7D;
+            --accent-soft: #8B6FA0;
+            --gold: #D4AF8F;
+            --text-dark: #3D2E4A;
+            --text-light: #6B5B7B;
+            --bg-light: #FFF8F5;
+            --bg-cream: #FDF5F0;
+            --bg-lavender: #F5F0FA;
+            --bg-soft: #FAF4FF;
+            --white: #ffffff;
+            
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --section-padding: 110px 20px;
+            --container-max: 1200px;
+            
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --shadow-soft: 0 10px 40px rgba(107, 78, 125, 0.08);
+            --shadow-medium: 0 15px 50px rgba(107, 78, 125, 0.12);
+            --shadow-float: 0 20px 60px rgba(107, 78, 125, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--bg-light);
+            overflow-x: hidden;
+            font-size: 15px;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            text-align: center;
+            line-height: 1.15;
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 4rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ========================================
+           ORGANIC BLOB SHAPES
+           ======================================== */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-light);
+            top: -100px;
+            right: -100px;
+            animation: blobFloat 15s ease-in-out infinite;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary-light);
+            bottom: -80px;
+            left: -80px;
+            animation: blobFloat 18s ease-in-out infinite reverse;
+        }
+
+        @keyframes blobFloat {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1);
+                border-radius: 50%;
+            }
+            33% { 
+                transform: translate(30px, -30px) scale(1.05);
+                border-radius: 45% 55% 60% 40%;
+            }
+            66% { 
+                transform: translate(-20px, 20px) scale(0.95);
+                border-radius: 60% 40% 45% 55%;
+            }
+        }
+
+        @keyframes organicShape {
+            0%, 100% { 
+                border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            }
+            25% { 
+                border-radius: 55% 45% 60% 40% / 45% 55% 50% 50%;
+            }
+            50% { 
+                border-radius: 45% 55% 50% 50% / 60% 40% 55% 45%;
+            }
+            75% { 
+                border-radius: 60% 40% 45% 55% / 50% 50% 45% 55%;
+            }
+        }
+
+        /* ========================================
+           UNIFIED IMAGE WRAPPER STYLE
+           ======================================== */
+        .image-wrapper {
+            position: relative;
+        }
+
+        .image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+            z-index: -1;
+            animation: organicShape 25s ease-in-out infinite reverse;
+        }
+
+        .image-frame {
+            border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            overflow: hidden;
+            box-shadow: var(--shadow-float);
+            transition: var(--transition);
+            aspect-ratio: 1;
+            animation: organicShape 30s ease-in-out infinite;
+        }
+
+        .image-frame:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(107, 78, 125, 0.25);
+        }
+
+        .image-frame img,
+        .image-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .image-frame:hover img,
+        .image-frame:hover video {
+            transform: scale(1.05);
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(201, 184, 232, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(201, 184, 232, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-shop {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 15px 40px rgba(107, 78, 125, 0.35);
+            padding: 20px 50px;
+            font-size: 0.98rem;
+            letter-spacing: 1.5px;
+            border-radius: 60px;
+        }
+
+        .btn-shop:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(107, 78, 125, 0.45);
+        }
+
+        /* ========================================
+           HEADER & NAVIGATION
+           ======================================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 248, 245, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 18px 0;
+            box-shadow: 0 4px 30px rgba(107, 78, 125, 0.06);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.88rem;
+            transition: var(--transition);
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            margin-top: 86px;
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-lavender) 50%, var(--bg-cream) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 7vw, 5.2rem);
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .hero-text h1 em {
+            font-style: italic;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .hero-text .tagline {
+            display: inline-block;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 10px 22px;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-decor {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-decor-1 {
+            width: 120px;
+            height: 120px;
+            background: var(--primary-light);
+            top: 15%;
+            left: 5%;
+            opacity: 0.6;
+            animation: floatSlow 8s ease-in-out infinite;
+        }
+
+        .hero-decor-2 {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-light);
+            bottom: 20%;
+            right: 10%;
+            opacity: 0.7;
+            animation: floatSlow 10s ease-in-out infinite reverse;
+        }
+
+        .hero-decor-3 {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            top: 60%;
+            left: 45%;
+            opacity: 0.3;
+            animation: floatSlow 12s ease-in-out infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+
+        /* ========================================
+           PROBLEM STATEMENT SECTION - NEW!
+           ======================================== */
+        .problems {
+            padding: var(--section-padding);
+            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 42px 28px;
+            border-radius: 40px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(232, 196, 196, 0.08) 0%, rgba(201, 184, 232, 0.08) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--secondary-light);
+        }
+
+        .problem-card:hover::before {
+            opacity: 1;
+        }
+
+        .problem-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--secondary-light) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            font-size: 2.5rem;
+            box-shadow: 0 8px 25px rgba(232, 196, 196, 0.3);
+            transition: var(--transition);
+        }
+
+        .problem-card:hover .problem-icon {
+            transform: scale(1.08) rotate(-5deg);
+        }
+
+        .problem-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           ABOUT SECTION
+           ======================================== */
+        .about {
+            padding: var(--section-padding);
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.15;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-size: 0.98rem;
+            font-weight: 300;
+        }
+
+        /* ========================================
+           INGREDIENTS SECTION
+           ======================================== */
+        .ingredients {
+            padding: var(--section-padding);
+            background: linear-gradient(180deg, var(--bg-lavender) 0%, var(--bg-soft) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ingredient-card {
+            background: var(--white);
+            padding: 42px 28px;
+            border-radius: 40px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ingredient-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 184, 232, 0.1) 0%, transparent 60%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .ingredient-card:hover::before { opacity: 1; }
+
+        .ingredient-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-float);
+        }
+
+        .ingredient-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.8rem;
+            box-shadow: 0 10px 30px rgba(201, 184, 232, 0.3);
+            transition: var(--transition);
+            animation: organicShape 15s ease-in-out infinite;
+        }
+
+        .ingredient-card:hover .ingredient-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .ingredient-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .ingredient-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           HOW TO USE SECTION
+           ======================================== */
+        .how-to-use {
+            padding: var(--section-padding);
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-to-use-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .usage-box {
+            background: linear-gradient(135deg, var(--bg-lavender) 0%, var(--bg-cream) 100%);
+            padding: 48px 40px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .usage-box::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(232, 196, 196, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .usage-box::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(201, 184, 232, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .usage-box h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .usage-box p {
+            font-size: 0.98rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+
+        .usage-highlight {
+            display: inline-block;
+            background: var(--white);
+            padding: 12px 26px;
+            border-radius: 50px;
+            margin: 12px 0;
+            font-weight: 600;
+            color: var(--accent);
+            box-shadow: var(--shadow-soft);
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           BENEFITS SECTION
+           ======================================== */
+        .benefits {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-soft) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-content {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 70px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefits-image-wrapper {
+            position: relative;
+        }
+
+        .benefits-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+            z-index: -1;
+            animation: organicShape 25s ease-in-out infinite reverse;
+            filter: blur(10px);
+            opacity: 0.7;
+        }
+
+        .benefits-image {
+            border-radius: 55% 45% 60% 40% / 50% 55% 45% 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow-float);
+            transition: var(--transition);
+            aspect-ratio: 4/5;
+            animation: organicShape 28s ease-in-out infinite;
+        }
+
+        .benefits-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(107, 78, 125, 0.25);
+        }
+
+        .benefits-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .benefits-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-item {
+            background: var(--white);
+            padding: 32px 28px;
+            border-radius: 40px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(201, 184, 232, 0.05) 0%, rgba(232, 196, 196, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .benefit-item:hover::before { opacity: 1; }
+
+        .benefit-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-float);
+        }
+
+        .benefit-number {
+            font-family: var(--font-heading);
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .benefit-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .benefit-item p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           TESTIMONIALS / SOCIAL PROOF - NEW!
+           ======================================== */
+        .testimonials {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--bg-lavender) 0%, var(--bg-soft) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: 60px;
+            left: 5%;
+            font-family: var(--font-heading);
+            font-size: 20rem;
+            color: var(--primary-light);
+            opacity: 0.4;
+            line-height: 1;
+            pointer-events: none;
+            font-style: italic;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-float);
+        }
+
+        .testimonial-stars {
+            color: #F5C84C;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(107, 78, 125, 0.08);
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(201, 184, 232, 0.3);
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 2px;
+            font-style: italic;
+        }
+
+        .testimonial-info span {
+            font-size: 0.8rem;
+            color: var(--accent-soft);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial-verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           COMPETITOR COMPARISON - NEW!
+           ======================================== */
+        .comparison {
+            padding: var(--section-padding);
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-wrapper {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: var(--white);
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--bg-lavender) 0%, var(--bg-cream) 100%);
+        }
+
+        .comparison-table th {
+            padding: 28px 20px;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-style: italic;
+            text-align: center;
+            border-bottom: 2px solid rgba(107, 78, 125, 0.08);
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: normal;
+            font-family: var(--font-body);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .comparison-table th.highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .comparison-table th.highlight::before {
+            content: '★ BEST';
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 0.65rem;
+            background: var(--white);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-style: normal;
+            font-family: var(--font-body);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(107, 78, 125, 0.08);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            padding-left: 35px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .comparison-table td.highlight {
+            background: rgba(201, 184, 232, 0.06);
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tbody tr {
+            transition: var(--transition);
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(244, 240, 250, 0.4);
+        }
+
+        .check {
+            color: #7FB77E;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .cross {
+            color: #D4A5A5;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .partial {
+            color: #E8C4C4;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* ========================================
+           PRICING SECTION
+           ======================================== */
+        .pricing {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--bg-lavender) 0%, var(--bg-soft) 50%, var(--bg-cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card {
+            max-width: 640px;
+            margin: 60px auto 0;
+            background: var(--white);
+            border-radius: 60px;
+            overflow: hidden;
+            box-shadow: var(--shadow-float);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 90px rgba(107, 78, 125, 0.25);
+        }
+
+        .pricing-badge {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 16px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .pricing-body {
+            padding: 60px 45px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-body::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(201, 184, 232, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .pricing-body::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(232, 196, 196, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .pricing-image {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 35px;
+            border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+            animation: organicShape 25s ease-in-out infinite;
+        }
+
+        .pricing-image::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            z-index: -1;
+            animation: organicShape 25s ease-in-out infinite reverse;
+        }
+
+        .pricing-image:hover { transform: scale(1.05); }
+
+        .pricing-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .pricing-title {
+            font-family: var(--font-heading);
+            font-size: 2.7rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-value {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .pricing-currency {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .pricing-period {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2.5rem 0;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-features li {
+            padding: 13px 0;
+            padding-left: 40px;
+            position: relative;
+            color: var(--text-dark);
+            border-bottom: 1px solid rgba(107, 78, 125, 0.08);
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .pricing-features li:last-child { border-bottom: none; }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(201, 184, 232, 0.4);
+        }
+
+        .pricing-guarantee {
+            background: linear-gradient(135deg, var(--bg-lavender) 0%, var(--bg-cream) 100%);
+            padding: 22px;
+            border-radius: 30px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-guarantee strong {
+            color: var(--accent);
+            font-style: normal;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           IMPORTANT INFO SECTION
+           ======================================== */
+        .important-info {
+            padding: var(--section-padding);
+            background: var(--white);
+        }
+
+        .info-box {
+            max-width: 880px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FDF5F0 100%);
+            padding: 48px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .info-box h3 {
+            font-family: var(--font-heading);
+            font-size: 2.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            padding: 13px 0;
+            padding-left: 40px;
+            position: relative;
+            color: var(--text-light);
+            line-height: 1.8;
+            border-bottom: 1px solid rgba(107, 78, 125, 0.08);
+            font-size: 0.9rem;
+        }
+
+        .info-box li:last-child { border-bottom: none; }
+
+        .info-box li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            color: var(--secondary);
+            font-size: 1.15rem;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-lavender) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 35px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-light) 0%, transparent 100%);
+            transition: var(--transition);
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-item:hover::before {
+            width: 100%;
+        }
+
+        .faq-item[open] {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-item[open]::before {
+            width: 100%;
+            opacity: 0.7;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 25px 65px 25px 30px;
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+            line-height: 1.3;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 300;
+            font-style: normal;
+            font-family: var(--font-body);
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(201, 184, 232, 0.4);
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+            transform: translateY(-50%) rotate(180deg);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
+        }
+
+        .faq-item summary:hover {
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            padding: 0 30px 28px 30px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            animation: fadeInAnswer 0.4s ease-out;
+        }
+
+        @keyframes fadeInAnswer {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .faq-answer strong {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION - NEW!
+           ======================================== */
+        .final-cta {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 250, 245, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatSlow 12s ease-in-out infinite;
+        }
+
+        .final-cta::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232, 196, 196, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatSlow 15s ease-in-out infinite reverse;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .final-cta h2 em {
+            display: inline-block;
+            background: linear-gradient(135deg, #F5DCDC 0%, #E4D9F5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 250, 245, 0.9);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .btn-final {
+            display: inline-block;
+            padding: 22px 55px;
+            background: var(--white);
+            color: var(--accent);
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .final-cta .btn-final:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            background: var(--bg-cream);
+        }
+
+        .final-cta-note {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: rgba(255, 250, 245, 0.7);
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 45px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        footer a:hover { color: var(--secondary); }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 968px) {
+            .hero-content,
+            .about-content,
+            .how-to-use-content,
+            .benefits-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .nav-links { gap: 20px; }
+
+            .hero-text { text-align: center; }
+            .hero-buttons { justify-content: center; }
+
+            .usage-box { padding: 42px 28px; }
+
+            .pricing-body { padding: 48px 30px; }
+            .pricing-value { font-size: 3.4rem; }
+
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .benefits-image-wrapper,
+            .image-wrapper {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .faq-item summary {
+                font-size: 1.2rem;
+                padding: 22px 60px 22px 25px;
+            }
+
+            .faq-answer {
+                padding: 0 25px 25px 25px;
+            }
+
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px 10px;
+            }
+
+            .comparison-table th:first-child,
+            .comparison-table td:first-child {
+                padding-left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px 20px;
+            }
+
+            .nav-links { display: none; }
+            .hero { min-height: auto; }
+
+            .ingredients-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+
+            .info-box { padding: 38px 22px; }
+
+            .pricing-value { font-size: 2.8rem; }
+            .pricing-card { border-radius: 40px; }
+            .pricing-body { padding: 42px 22px; }
+            .pricing-image { width: 180px; height: 180px; }
+
+            .faq-item {
+                border-radius: 28px;
+            }
+
+            .faq-item summary {
+                font-size: 1.1rem;
+                padding: 20px 55px 20px 22px;
+            }
+
+            .faq-item summary::after {
+                width: 32px;
+                height: 32px;
+                right: 18px;
+                font-size: 1.3rem;
+            }
+
+            .faq-answer {
+                padding: 0 22px 22px 22px;
+                font-size: 0.9rem;
+            }
+
+            .comparison-wrapper {
+                overflow-x: auto;
+            }
+
+            .comparison-table {
+                min-width: 600px;
+            }
+
+            .testimonials::before {
+                font-size: 12rem;
+                top: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn { width: 100%; }
+            .hero-text h1 { font-size: 2.5rem; }
+
+            .pricing-value { font-size: 2.5rem; }
+
+            .pricing-amount {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .pricing-features li { font-size: 0.85rem; }
+            .btn-shop { padding: 16px 34px; }
+            .pricing-image { width: 160px; height: 160px; }
+
+            .faq-item summary {
+                font-size: 1rem;
+                padding: 18px 50px 18px 20px;
+            }
+
+            .faq-item summary::after {
+                width: 28px;
+                height: 28px;
+                right: 14px;
+                font-size: 1.1rem;
+            }
+
+            .final-cta .btn-final {
+                padding: 18px 40px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 15px 40px rgba(107, 78, 125, 0.35); }
+            50% { box-shadow: 0 15px 50px rgba(107, 78, 125, 0.55); }
+        }
+
+        .hero-text { animation: fadeInLeft 1s ease-out; }
+        .hero-image-wrapper { animation: fadeInRight 1s ease-out; }
+        .about-image-wrapper { animation: fadeInLeft 0.8s ease-out; }
+        .about-text { animation: fadeInRight 0.8s ease-out; }
+        .ingredient-card, .benefit-item, .problem-card { animation: fadeInUp 0.8s ease-out; }
+        .pricing-card { animation: fadeInUp 1s ease-out; }
+        .btn-shop { animation: pulse 3s ease-in-out infinite; }
+        .how-to-use-video-wrapper { animation: fadeInLeft 1s ease-out; }
+        .benefits-image-wrapper { animation: fadeInLeft 0.8s ease-out; }
+        .faq-item { animation: fadeInUp 0.6s ease-out backwards; }
+        .faq-item:nth-child(1) { animation-delay: 0.05s; }
+        .faq-item:nth-child(2) { animation-delay: 0.1s; }
+        .faq-item:nth-child(3) { animation-delay: 0.15s; }
+        .faq-item:nth-child(4) { animation-delay: 0.2s; }
+        .faq-item:nth-child(5) { animation-delay: 0.25s; }
+        .faq-item:nth-child(6) { animation-delay: 0.3s; }
+        .testimonial-card { animation: fadeInUp 0.8s ease-out backwards; }
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         HEADER & NAVIGATION
+         ======================================== -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="https://cdn.shopify.com/s/files/1/0762/4107/6293/files/logo.png?v=1790350231" alt="Sweet Curls Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problems">Why</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#pricing">Shop</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         1. HERO SECTION
+         Main headline, subheadline, CTA, strong visual
+         ======================================== -->
+    <section class="hero">
+        <div class="hero-decor hero-decor-1"></div>
+        <div class="hero-decor hero-decor-2"></div>
+        <div class="hero-decor hero-decor-3"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="tagline">30-Day Treatment</span>
+                    <h1>Sweet <em>Curls</em></h1>
+                    <p>Hydrolyzed Naticol Drinking Collagen Powder — an innovative hydrocollagen specifically formulated for wavy, curly hair. This delicious cocktail works from the inside, providing the ingredients necessary to rebuild hair structure, moisturize and improve elasticity.</p>
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn btn-primary">Shop Now</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="image-wrapper hero-image-wrapper">
+                    <div class="image-frame">
+                        <img src="https://cdn.shopify.com/s/files/1/0762/4107/6293/files/ihbul2eckvkx.jpg?v=1790353081" alt="Sweet Curls Product">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         2. PROBLEM STATEMENT - NEW!
+         Customer pain points with visuals
+         ======================================== -->
+    <section class="problems" id="problems">
+        <div class="container">
+            <h2 class="section-title">Sound Familiar?</h2>
+            <p class="section-subtitle">If you have curly or wavy hair, you know the struggle. Your curls deserve better than surface-level fixes.</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💔</div>
+                    <h3>Frizzy, Undefined Curls</h3>
+                    <p>Your curls lose shape by midday. No matter what products you use, they just won't hold their beautiful pattern.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🍂</div>
+                    <h3>Dry & Brittle Hair</h3>
+                    <p>Constant breakage, split ends, and hair that feels like straw. Your curls lack the moisture and strength they need.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🧴</div>
+                    <h3>Surface-Level Products</h3>
+                    <p>Creams and serums only mask the problem. They don't nourish your hair from within where it truly matters.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Wasted Money</h3>
+                    <p>You've tried countless treatments, masks, and routines — but nothing delivers real, lasting transformation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         3. ABOUT SECTION (Solution introduction)
+         ======================================== -->
+    <section class="about" id="about">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="container">
+            <div class="about-content">
+                <div class="image-wrapper about-image-wrapper">
+                    <div class="image-frame">
+                        <img src="https://cdn.shopify.com/s/files/1/0762/4107/6293/files/gp_twisty_hydrokolagen_84_768x_cbaf6206-7220-41fc-8d34-97d6efd6c226.webp?v=1790351875" alt="Sweet Curls Product">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Every Sip is Real Support for Your Curls</h2>
+                    <p>Regular use moisturizes from the inside, restores elasticity, shine and softness to the hair. The curl becomes more defined and natural — from bulbs to ends.</p>
+                    <p>Sweet Curls is more than just a supplement. It's a daily ritual that nourishes your hair from within, giving you the confidence to embrace your natural texture.</p>
+                    <a href="#pricing" class="btn btn-primary">Get Yours Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         4. INGREDIENTS SECTION (Product Features)
+         ======================================== -->
+    <section class="ingredients" id="ingredients">
+        <div class="container">
+            <h2 class="section-title">The Science Behind Your Curls</h2>
+            <p class="section-subtitle">Hydration and strength from within. Meet the key ingredients behind your daily curl ritual, selected to support your hair from the inside out.</p>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🐟</div>
+                    <h3>Hydrolyzed Naticol</h3>
+                    <p>Premium fish collagen peptides for maximum absorption and hair structure rebuilding.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌿</div>
+                    <h3>Chicory Inulin</h3>
+                    <p>Prebiotic fiber that supports gut health and enhances nutrient absorption.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🍒</div>
+                    <h3>Acerola Extract</h3>
+                    <p>Natural vitamin C source (25% standardized) for collagen synthesis and antioxidant protection.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">💧</div>
+                    <h3>Hyaluronic Acid</h3>
+                    <p>Deep hydration from within, improving hair moisture and scalp health.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌱</div>
+                    <h3>AnaGain™</h3>
+                    <p>Sprouted pea seed extract that stimulates hair growth and reduces hair loss.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">⚡</div>
+                    <h3>Coenzyme Q10</h3>
+                    <p>Powerful antioxidant that protects hair follicles and supports cellular energy.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">✨</div>
+                    <h3>Zinc & Biotin</h3>
+                    <p>Essential minerals for strong, healthy hair growth and reduced breakage.</p>
+                </div>
+                <div class="ingredient-card">
+                    <div class="ingredient-icon">🌸</div>
+                    <h3>Peony & Lavender</h3>
+                    <p>Delicate natural flavors for a pleasant daily ritual experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         5. HOW TO USE SECTION
+         ======================================== -->
+    <section class="how-to-use" id="how-to-use">
+        <div class="container">
+            <h2 class="section-title">How to Use</h2>
+            <p class="section-subtitle">Your simple daily ritual for beautiful, defined curls</p>
+            
+            <div class="how-to-use-content">
+                <div class="image-wrapper how-to-use-video-wrapper">
+                    <div class="image-frame">
+                        <video autoplay muted loop playsinline>
+                            <source src="https://cdn.shopify.com/videos/c/o/v/12930e3a741d4bdcbfd9cbbfb236a218.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                
+                <div class="usage-box">
+                    <h3>Your Daily Curl Ritual</h3>
+                    <p>Mix one serving of the product daily</p>
+                    <div class="usage-highlight">7g (2 scoops)</div>
+                    <p>with</p>
+                    <div class="usage-highlight">150ml of water</div>
+                    <p style="margin-top: 20px; opacity: 0.8;">Enjoy your delicious peony and lavender flavored collagen drink and let it work its magic from within.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         6. BENEFITS SECTION
+         ======================================== -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Transform Your Curls</h2>
+            <p class="section-subtitle">Experience the difference with our scientifically formulated 30-day treatment</p>
+            
+            <div class="benefits-content">
+                <div class="benefits-image-wrapper">
+                    <div class="benefits-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0762/4107/6293/files/gp_twisty_hydrokolagen_81_768x_fbb2c516-254b-4550-9608-6ac50b0fe111.webp?v=1790351875" alt="Sweet Curls Benefits">
+                    </div>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-number">01</div>
+                        <h3>Deep Hydration</h3>
+                        <p>Moisturizes hair from the inside, restoring natural elasticity and preventing dryness.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">02</div>
+                        <h3>Defined Curls</h3>
+                        <p>Enhances curl pattern, making your natural texture more defined and beautiful.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">03</div>
+                        <h3>Strength & Shine</h3>
+                        <p>Rebuilds hair structure from bulbs to ends, restoring softness and natural shine.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">04</div>
+                        <h3>Reduced Breakage</h3>
+                        <p>Strengthens hair fibers, reducing breakage and split ends for healthier-looking hair.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">05</div>
+                        <h3>Scalp Health</h3>
+                        <p>Nourishes the scalp, creating the perfect environment for healthy hair growth.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">06</div>
+                        <h3>Natural Beauty</h3>
+                        <p>Embrace your natural curls with confidence, knowing they're supported from within.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         7. TESTIMONIALS / SOCIAL PROOF - NEW!
+         ======================================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Loved by Curly Girls Everywhere</h2>
+            <p class="section-subtitle">Real results from real customers who transformed their curls with Sweet Curls</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"After just 3 weeks, my curls have never been more defined! I used to spend 40 minutes styling — now it takes 10. The frizz is gone and my hair feels alive again."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">EM</div>
+                        <div class="testimonial-info">
+                            <h4>Emma M.</h4>
+                            <span>Type 3B Curls</span>
+                            <div class="testimonial-verified">✓ Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"I was skeptical about a drinkable collagen, but the peony-lavender flavor is divine! My hair is softer, shinier, and my waves actually hold their shape all day now."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div class="testimonial-info">
+                            <h4>Sofia K.</h4>
+                            <span>Type 2C Waves</span>
+                            <div class="testimonial-verified">✓ Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Finally a product that works FROM WITHIN! I've tried every curl cream on the market. Sweet Curls is the first thing that gave me real, lasting results. My coils are bouncier than ever!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AJ</div>
+                        <div class="testimonial-info">
+                            <h4>Amara J.</h4>
+                            <span>Type 4A Coils</span>
+                            <div class="testimonial-verified">✓ Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         8. COMPETITOR COMPARISON - NEW!
+         ======================================== -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <h2 class="section-title">Why Sweet Curls Wins</h2>
+            <p class="section-subtitle">See how Sweet Curls compares to generic collagen supplements and regular hair vitamins</p>
+            
+            <div class="comparison-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th class="highlight">Sweet Curls</th>
+                            <th>Generic Collagen</th>
+                            <th>Hair Vitamins</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Formulated for curly hair</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Marine collagen (Naticol®)</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="partial">Sometimes</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Drinkable powder (fast absorption)</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗ Pills only</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hyaluronic acid included</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>AnaGain™ for hair growth</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C + Biotin + Zinc</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="partial">Some</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Delicious flavor (peony & lavender)</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗ Tasteless</span></td>
+                            <td><span class="cross">✗ Pills</span></td>
+                        </tr>
+                        <tr>
+                            <td>Visible curl definition results</td>
+                            <td class="highlight"><span class="check">✓ 2-4 weeks</span></td>
+                            <td><span class="partial">Varies</span></td>
+                            <td><span class="partial">3-6 months</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         9. PRICING SECTION (Offer / What you get)
+         ======================================== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Start Your Curl Journey</h2>
+            <p class="section-subtitle">Invest in your hair's health with our premium 30-day collagen treatment. One jar, endless beautiful curls.</p>
+            
+            <div class="pricing-card">
+                <div class="pricing-badge">✨ 30-Day Complete Treatment ✨</div>
+                <div class="pricing-body">
+                    <div class="pricing-image">
+                        <img src="https://cdn.shopify.com/s/files/1/0762/4107/6293/files/gp_twisty_hydrokolagen_001_768x_bea4bf53-7896-4c10-82cd-3123ab858169.webp?v=1790351875" alt="Sweet Curls Product">
+                    </div>
+                    
+                    <h3 class="pricing-title">Sweet Curls</h3>
+                    <p class="pricing-subtitle">Hydrolyzed Naticol Collagen Powder · Peony & Lavender Flavor</p>
+                    
+                    <div class="pricing-amount">
+                        <span class="pricing-value">21,500</span>
+                        <span class="pricing-currency">AMD</span>
+                    </div>
+                    <p class="pricing-period">/ 30-day supply</p>
+                    
+                    <ul class="pricing-features">
+                        <li>30-day supply (one full treatment cycle)</li>
+                        <li>Premium Hydrolyzed Naticol fish collagen</li>
+                        <li>Enriched with Vitamin C, Biotin & Zinc</li>
+                        <li>Hyaluronic acid for deep hydration</li>
+                        <li>AnaGain™ for hair growth support</li>
+                        <li>Delicious peony & lavender flavor</li>
+                        <li>Easy-to-mix powder formula</li>
+                    </ul>
+                    
+                    <a href="https://ek702lg4d0cs8l0o-76241076293.shopifypreview.com/products/twisty-sweet-curls-are-made-of-this-hair-hydrocollagen" target="_blank" class="btn btn-shop">
+                        🛍️ Purchase Now
+                    </a>
+                    
+                    <div class="pricing-guarantee">
+                        <strong>💜 Your Satisfaction Guaranteed</strong>
+                        Join thousands of happy customers who have transformed their curls with Sweet Curls.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         IMPORTANT INFORMATION SECTION
+         ======================================== -->
+    <section class="important-info">
+        <div class="container">
+            <div class="info-box">
+                <h3>Important Information</h3>
+                <ul>
+                    <li>Do not exceed the recommended daily serving for consumption.</li>
+                    <li>The dietary supplement should not be used as a substitute (replacement) for a varied diet.</li>
+                    <li>A varied diet and a healthy lifestyle are recommended.</li>
+                    <li>Not recommended for pregnant and lactating women, as well as people under 18 years of age.</li>
+                    <li>Do not use in case of hypersensitivity to any of the ingredients of the preparation.</li>
+                    <li>Do not use in people who are predisposed to the formation of kidney stones or who suffer from kidney stones.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ SECTION
+         ======================================== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about Sweet Curls and your curl transformation journey</p>
+            
+            <div class="faq-container">
+                <div class="faq-list">
+                    
+                    <details class="faq-item">
+                        <summary>What is Sweet Curls and how does it work?</summary>
+                        <div class="faq-answer">
+                            <p>Sweet Curls is an innovative <strong>hydrolyzed Naticol collagen powder</strong> specifically formulated for wavy and curly hair. It works from the inside out — when you drink it daily, the collagen peptides, vitamins, and active ingredients are absorbed into your bloodstream and delivered directly to your hair follicles. Over time, this helps rebuild hair structure, improve elasticity, and enhance your natural curl pattern from bulbs to ends.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long until I see results?</summary>
+                        <div class="faq-answer">
+                            <p>Most customers begin to notice visible improvements within <strong>2 to 4 weeks</strong> of consistent daily use. For the best and most lasting results, we recommend completing the full <strong>30-day treatment cycle</strong>. Hair grows slowly, so continued use over multiple cycles will deliver even more dramatic transformation in curl definition, shine, and overall hair health.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Is Sweet Curls suitable for all hair types?</summary>
+                        <div class="faq-answer">
+                            <p>Sweet Curls is specifically designed for <strong>wavy, curly, and coily hair types</strong>. However, the nourishing ingredients — collagen, hyaluronic acid, biotin, and zinc — benefit all hair types by improving hydration, strength, and overall hair health. If you have curly hair and want more defined, bouncy, and healthier curls, this product is made for you!</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>When is the best time to take Sweet Curls?</summary>
+                        <div class="faq-answer">
+                            <p>You can take Sweet Curls <strong>anytime that fits your routine</strong> — morning, afternoon, or evening. Many customers prefer taking it in the morning as part of their daily ritual, or before bed when the body naturally repairs and regenerates. The most important thing is <strong>consistency</strong> — take it every day for the best results.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Can I take Sweet Curls with other supplements?</summary>
+                        <div class="faq-answer">
+                            <p>Sweet Curls is formulated to be a <strong>complete hair nutrition solution</strong> on its own. If you're already taking other supplements, we recommend checking with your healthcare provider to avoid exceeding the recommended daily intake of certain vitamins and minerals, especially <strong>zinc and vitamin C</strong>, which are already included in Sweet Curls.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What does Sweet Curls taste like?</summary>
+                        <div class="faq-answer">
+                            <p>Sweet Curls has a delightful <strong>peony and lavender flavor</strong> — delicate, floral, and refreshing. It mixes easily with 150ml of water to create a pleasant-tasting drink that you'll actually look forward to every day. No fishy aftertaste, just a light and enjoyable daily ritual.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         10. FINAL CTA SECTION - NEW!
+         Strong closing message + purchase CTA
+         ======================================== -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Ready to Love Your <em>Curls</em> Again?</h2>
+                <p>Join thousands of women who have transformed their hair from the inside out. Your best curls are just one sip away — start your 30-day journey today.</p>
+                <a href="https://ek702lg4d0cs8l0o-76241076293.shopifypreview.com/products/twisty-sweet-curls-are-made-of-this-hair-hydrocollagen" target="_blank" class="btn-final">
+                    🛍️ Start My Transformation
+                </a>
+                <p class="final-cta-note">✨ 30-Day Treatment · Free Shipping · Satisfaction Guaranteed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sweet Curls by Twisty. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
